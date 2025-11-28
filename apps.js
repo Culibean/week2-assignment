@@ -50,27 +50,36 @@ function createFullscreenImages(picture) {
 
 createThumbnails();
 
-//TODO: give buttons functions to move the thumbnail gallery (source: W3schools)
+//TODO: show an image once I enter the page:
 
-let currentPosition = 0;
+createFullscreenImages(imageData[0]);
+
+//TODO: give buttons functions to move the thumbnail gallery
+
+let currentPosition = 0; //tracks current position
 
 function showImageByPosition(position) {
-  currentPosition = position;
-  const picture = imageData[currentPosition];
-  createFullscreenImages(picture);
+  currentPosition = position; // currentPosition will become the parameter in the fuction
+  const picture = imageData[currentPosition]; //depending on the position, this will take the correct image from the array
+  createFullscreenImages(picture); //then it calls the function from above to create the full screen version
 }
 
+//the above is creating a sort of index of the images for the buttons to click through
+
 document.getElementById("next").addEventListener("click", function () {
-  currentPosition++;
+  //creates an Event Listener every time the button is clicked
+  currentPosition++; //once clicked it moves the position up by one
   if (currentPosition >= imageData.length) {
+    //if it comes to and end, meaning more clicks than the length of the array it will revert back to position 0(image the beginnging)
     currentPosition = 0;
   }
-  showImageByPosition(currentPosition);
+  showImageByPosition(currentPosition); //it then calls the above function to create a full screen image of the current picture
 });
 
 document.getElementById("previous").addEventListener("click", function () {
   currentPosition--;
   if (currentPosition < 0) {
+    //this is to make sure that if the previous button goes before the first image, it goes back to the end of the array and pull the last image --> backwards loop
     currentPosition = imageData.length - 1;
   }
   showImageByPosition(currentPosition);
