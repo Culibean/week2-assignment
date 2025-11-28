@@ -22,9 +22,8 @@ body {
 .fullscreen {
   height: 100%;
   width: 100%;
-  display: block;
   object-fit: contain;
-  margin: auto;
+  display: block;
 }
 
 #next {
@@ -69,50 +68,41 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: block;
+  position: relative;
   width: 100%;
   height: auto;
   flex-direction: column;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   #thumbnail-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: fixed;
-    flex-wrap: wrap;
     bottom: 0;
     left: 0;
     width: 100%;
-    align-items: center;
-  }
-  #fullscreen-container {
-    display: flex;
+    height: auto;
     justify-content: center;
     align-items: center;
-    position: block;
+    background: rgb(223, 166, 166);
+    z-index: 10;
+  }
+  #fullscreen-container {
+    position: fixed;
     width: 100%;
-    height: auto;
-    flex-direction: column;
-    top: 0;
-    left: 0;
+    padding-bottom: 2;
   }
   .thumbnail {
     height: auto;
-    max-height: 25vh;
-    max-width: 100%;
-    border: solid 1px rgb(223, 166, 166);
-    border-radius: 25px;
-    display: block;
-    bottom: 0;
-    left: 0;
+    width: auto;
+    border-radius: 15px;
   }
   .fullscreen {
-    height: 100%;
-    width: 100%;
-    display: block;
+    max-width: 100%;
+    max-height: auto;
     object-fit: contain;
-    top: 0;
-    left: 0;
+    width: auto;
+    height: 100%;
   }
 }
