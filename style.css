@@ -3,3 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.thumbnail {
+  height: 200px;
+  width: auto;
+  border: solid 10px rgb(223, 166, 166);
+  border-radius: 25px;
+}
+
+.fullscreen {
+  height: 100%;
+  width: auto;
+}
+
+#thumbnail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  border: solid 10px rgb(223, 166, 166);
+  background-color: rgb(223, 166, 166);
+}
+
+#fullscreen-container {
+}
