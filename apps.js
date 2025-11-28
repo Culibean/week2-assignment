@@ -49,3 +49,29 @@ function createFullscreenImages(picture) {
 }
 
 createThumbnails();
+
+//TODO: give buttons functions to move the thumbnail gallery (source: W3schools)
+
+let currentPosition = 0;
+
+function showImageByPosition(position) {
+  currentPosition = position;
+  const picture = imageData[currentPosition];
+  createFullscreenImages(picture);
+}
+
+document.getElementById("next").addEventListener("click", function () {
+  currentPosition++;
+  if (currentPosition >= imageData.length) {
+    currentPosition = 0;
+  }
+  showImageByPosition(currentPosition);
+});
+
+document.getElementById("previous").addEventListener("click", function () {
+  currentPosition--;
+  if (currentPosition < 0) {
+    currentPosition = imageData.length - 1;
+  }
+  showImageByPosition(currentPosition);
+});
