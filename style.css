@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(223, 166, 166);
+}
+
 .thumbnail {
   height: 200px;
   width: auto;
@@ -27,4 +31,37 @@
 }
 
 #fullscreen-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#next {
+  position: absolute;
+  right: 20px;
+  top: 100px;
+}
+
+#previous {
+  position: absolute;
+  left: 10px;
+  top: 100px;
+}
+
+#next,
+#previous {
+  padding: 10px;
+  background-color: rgb(170, 221, 170);
+  font-size: 1rem;
+  color: rgb(29, 31, 30);
+  font-family: Trebuchet MS;
+  cursor: pointer;
+  border: solid 2px rgb(131, 146, 131);
+  border-radius: 20px;
+}
+
+#next:hover,
+#previous:hover {
+  background-color: rgb(136, 139, 138);
+  border: solid 2px rgb(136, 139, 138);
 }
